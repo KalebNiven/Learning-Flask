@@ -19,16 +19,7 @@ def start_pate():
 def restaurantMenu(restaurant_id):
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
     items = session.query(MenuItem).filter_by(restaurant_id=restaurant.id)
-    output = ''
-    for i in items:
-        output += i.name
-        output += '</br>'
-        output += i.price
-        output += '</br>'
-        output += i.description
-        output += '</br>'
-        output += '</br>'
-    return output
+    return render_template('menu.html' name=name)
 
 # Task 1: Create route for newMenuItem function here
 
